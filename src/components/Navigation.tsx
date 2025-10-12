@@ -31,7 +31,7 @@ const Navigation = () => {
               <span className="text-xl font-bold">OG</span>
             </div>
             <span className="text-xl font-bold bg-gradient-to-r from-secondary to-foreground bg-clip-text text-transparent">
-              AstroClean AI
+              AstroSafe
             </span>
           </div>
 

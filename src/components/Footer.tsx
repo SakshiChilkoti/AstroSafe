@@ -114,7 +114,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <p className="text-muted-foreground text-sm">
-            © {currentYear} AstroSpace AI – All Rights Reserved
+            © {currentYear} AstroSafe – All Rights Reserved
           </p>
           <div className="flex items-center space-x-2">
             <p className="text-muted-foreground text-sm">Powered by</p>
