@@ -39,7 +39,7 @@ const HeroSection = () => {
           {/* Title */}
           <h1 className="text-5xl md:text-7xl font-bold leading-tight">
             <span className="bg-gradient-to-r from-foreground to-secondary bg-clip-text text-transparent">
-              OrbitGuard AI
+              AstroClean AI
             </span>
             <br />
             <span className="text-3xl md:text-5xl text-secondary">

@@ -181,13 +181,29 @@ const VisualizationSection = () => {
                 <p className="text-sm text-muted-foreground mb-4">
                   Want to explore in full 3D with real-time tracking?
                 </p>
-                <Button
+                {/* <Button
                   onClick={() => window.open("https://stuffin.space/", "_blank")}
                   className="bg-secondary hover:bg-secondary/90 gap-2"
                 >
                   Launch 3D Visualization
                   <ExternalLink className="w-4 h-4" />
-                </Button>
+                </Button> */}
+
+
+
+
+
+              <Button asChild className="bg-secondary hover:bg-secondary/90 gap-2">
+  <a 
+    href="https://stuffin.space/"   // ✅ Wrap URL in quotes
+    target="_blank" 
+    rel="noopener noreferrer"
+  >
+    Launch 3D Visualization
+    <ExternalLink className="w-4 h-4" />
+  </a>
+</Button>
+                
               </div>
             </div>
           </Card>

@@ -17,7 +17,7 @@ const Navigation = () => {
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
-    element?.scrollIntoView({ behavior: "smooth" });
+    if (element) element.scrollIntoView({ behavior: "smooth" });
     setIsMenuOpen(false);
   };
 
@@ -31,11 +31,11 @@ const Navigation = () => {
               <span className="text-xl font-bold">OG</span>
             </div>
             <span className="text-xl font-bold bg-gradient-to-r from-secondary to-foreground bg-clip-text text-transparent">
-              OrbitGuard AI
+              AstroClean AI
             </span>
           </div>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-1">
             {navLinks.map((link) => (
               <button
@@ -48,14 +48,11 @@ const Navigation = () => {
             ))}
           </div>
 
-          {/* Search Bar */}
+          {/* Search & User */}
           <div className="hidden lg:flex items-center space-x-4">
             <div className="relative">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
-              <Input
-                placeholder="Search satellites..."
-                className="pl-10 w-64 bg-card border-border focus:border-secondary"
-              />
+              <Input placeholder="Search satellites..." className="pl-10 w-64 bg-card border-border focus:border-secondary" />
             </div>
             <Button variant="ghost" size="icon" className="hover:bg-muted">
               <User className="w-5 h-5" />
@@ -63,10 +60,7 @@ const Navigation = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-muted transition-colors"
-          >
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden p-2 rounded-lg hover:bg-muted transition-colors">
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
@@ -83,15 +77,6 @@ const Navigation = () => {
                 {link.name}
               </button>
             ))}
-            <div className="px-4 pt-2">
-              <div className="relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
-                <Input
-                  placeholder="Search satellites..."
-                  className="pl-10 w-full bg-card border-border"
-                />
-              </div>
-            </div>
           </div>
         )}
       </div>

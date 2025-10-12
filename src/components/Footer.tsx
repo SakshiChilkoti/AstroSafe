@@ -40,7 +40,7 @@ const Footer = () => {
               <div className="w-10 h-10 bg-gradient-orbital rounded-lg flex items-center justify-center shadow-glow">
                 <span className="text-xl font-bold">OG</span>
               </div>
-              <span className="text-xl font-bold text-foreground">OrbitGuard AI</span>
+              <span className="text-xl font-bold text-foreground">AstroClean AI</span>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
               Advanced satellite tracking and AI-powered collision prediction for safer space operations.
@@ -114,7 +114,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <p className="text-muted-foreground text-sm">
-            © {currentYear} OrbitGuard AI – All Rights Reserved
+            © {currentYear} AstroSpace AI – All Rights Reserved
           </p>
           <div className="flex items-center space-x-2">
             <p className="text-muted-foreground text-sm">Powered by</p>
