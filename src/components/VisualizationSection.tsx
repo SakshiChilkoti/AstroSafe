@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Satellite, Trash2, Radio } from "lucide-react";
+import { Satellite, Trash2, Radio, ExternalLink } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import AdvancedFilters from "./AdvancedFilters";
+import CustomDataUpload from "./CustomDataUpload";
 
 interface SatelliteData {
   id: string;
@@ -14,8 +16,21 @@ interface SatelliteData {
   y: number;
 }
 
+interface FilterOptions {
+  search: string;
+  type: string;
+  country: string;
+  launchYear: string;
+}
+
 const VisualizationSection = () => {
   const [filter, setFilter] = useState<"all" | "active" | "debris" | "high-risk">("all");
+  const [advancedFilters, setAdvancedFilters] = useState<FilterOptions>({
+    search: "",
+    type: "all",
+    country: "all",
+    launchYear: "all",
+  });
 
   const satellites: SatelliteData[] = [
     { id: "SAT-001", name: "Thales ISS-1", type: "active", orbit: "LEO", velocity: "7.8 km/s", x: 35, y: 45 },
@@ -26,9 +41,17 @@ const VisualizationSection = () => {
     { id: "DEB-002", name: "Rocket Stage", type: "debris", orbit: "LEO", velocity: "7.6 km/s", x: 80, y: 45 },
   ];
 
-  const filteredSatellites = satellites.filter(
-    (sat) => filter === "all" || sat.type === filter
-  );
+  const filteredSatellites = satellites.filter((sat) => {
+    // Basic filter
+    if (filter !== "all" && sat.type !== filter) return false;
+    
+    // Advanced filters
+    if (advancedFilters.search && !sat.name.toLowerCase().includes(advancedFilters.search.toLowerCase())) {
+      return false;
+    }
+    
+    return true;
+  });
 
   const getColorByType = (type: string) => {
     switch (type) {
@@ -53,6 +76,11 @@ const VisualizationSection = () => {
           <p className="text-xl text-foreground/80 max-w-2xl mx-auto">
             Track satellites and space debris in real-time with our interactive orbital map
           </p>
+        </div>
+
+        {/* Advanced Filters */}
+        <div className="mb-8">
+          <AdvancedFilters onFilterChange={setAdvancedFilters} />
         </div>
 
         {/* Filter Buttons */}
@@ -146,7 +174,28 @@ const VisualizationSection = () => {
                 </div>
               </div>
             </div>
+
+            {/* 3D Visualization Link */}
+            <div className="p-6 bg-card/50 border-t border-border">
+              <div className="text-center">
+                <p className="text-sm text-muted-foreground mb-4">
+                  Want to explore in full 3D with real-time tracking?
+                </p>
+                <Button
+                  onClick={() => window.open("https://stuffin.space/", "_blank")}
+                  className="bg-secondary hover:bg-secondary/90 gap-2"
+                >
+                  Launch 3D Visualization
+                  <ExternalLink className="w-4 h-4" />
+                </Button>
+              </div>
+            </div>
           </Card>
+        </div>
+
+        {/* Custom Data Upload */}
+        <div className="mt-12">
+          <CustomDataUpload />
         </div>
       </div>
     </section>

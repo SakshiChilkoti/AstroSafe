@@ -1,0 +1,4 @@
+project_id = "nqohqyqcyigvecgvlwzh"
+
+[functions.predict-collision]
+verify_jwt = false

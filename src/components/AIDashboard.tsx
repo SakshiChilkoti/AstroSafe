@@ -4,6 +4,9 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { AlertTriangle, CheckCircle, Clock, TrendingUp } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
+import TimelinePredictions from "./TimelinePredictions";
+import ManeuverSimulation from "./ManeuverSimulation";
+import DebrisHeatmap from "./DebrisHeatmap";
 
 const AIDashboard = () => {
   const [riskLevel, setRiskLevel] = useState(35);
@@ -163,6 +166,17 @@ const AIDashboard = () => {
               View All Alerts
             </Button>
           </Card>
+        </div>
+
+        {/* Timeline Predictions */}
+        <div className="mt-12">
+          <TimelinePredictions />
+        </div>
+
+        {/* Maneuver Simulation & Heatmap */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-12">
+          <ManeuverSimulation />
+          <DebrisHeatmap />
         </div>
       </div>
     </section>
