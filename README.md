@@ -240,8 +240,9 @@ AstroSafe aligns with Thales’ vision to **secure tomorrow’s skies and space*
 
 | Contributor | Role |
 |--------------|------|
-| **Sakshi Chilkoti** | Full-Stack Developer, ML Integrator, UI/UX Designer |
-| **Open Source References** | AstroCleanAI, StuffIn.Space |
+| **Sakshi Chilkoti** | ML Integrator, UI/UX Designer |
+| **Ayush Tiwari** | Full-Stack Developer, ML Integrator |
+
 
 ---
 
