@@ -10,7 +10,7 @@ const VisualizationEmbedded = () => {
 
       <div className="relative w-full max-w-5xl mx-auto aspect-video rounded-xl overflow-hidden shadow-lg">
         <iframe
-          src="https://stuffin.space/"
+          src="https://ajmas.github.io/StuffInSpace/"
           className="w-full h-full"
           frameBorder="0"
           loading="lazy"
@@ -25,7 +25,7 @@ const VisualizationEmbedded = () => {
         (If the visualization doesn’t load, click below to open it externally)
       </p>
       <a
-        href="https://stuffin.space/"
+        href="https://ajmas.github.io/StuffInSpace/"
         target="_blank"
         rel="noopener noreferrer"
         className="inline-block mt-2 text-secondary underline hover:text-secondary/80"
